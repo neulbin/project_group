@@ -9,11 +9,11 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader) # skip header
 
-    # create an empty lists to store the amount of cash on hand
+    # create an empty lists to store the day and the respective amount of cash on hand
     cashOnHand=[] 
 
-    # append time sheet and sales record into the salesRecords list
+    # append the day and the respective amount of cash on hand into the cashOnHand list
     for row in reader:
-        #get the employee id, total hours, break hours, and sales for each record
-        #and append the salesRecords list
+        #get the day and its amount of cash on hand
+        #and append the cashOnHand list
         cashOnHand.append([row[0],row[1]])   

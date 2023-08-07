@@ -9,11 +9,11 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     reader = csv.reader(file)
     next(reader) # skip header
 
-    # create an empty lists to store the amount of cash on hand
+    # create an empty lists to store the type of expense and its percentage
     overheads=[] 
 
-    # append time sheet and sales record into the salesRecords list
+    # append type of expense and its percentage into the overheads list
     for row in reader:
-        #get the employee id, total hours, break hours, and sales for each record
-        #and append the salesRecords list
+        #get the type of expense and its percentage
+        #and append the overheads list
         overheads.append([row[0],row[1]])  
