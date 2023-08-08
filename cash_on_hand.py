@@ -18,4 +18,6 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         #and append the cashOnHand list
         cashOnHand.append([row[0],row[1]])
 
-#-------------------------------------------------------------#   
+#-------------------------------------------------------------#
+# hi   
+# um
