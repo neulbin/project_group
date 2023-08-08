@@ -12,4 +12,6 @@ file_path_write.touch()
 
 with file_path_write.open(mode='w', encoding="'UTF-8") as file:
     # write the highest overhead category
-    file.write(f"[HIGHEST OVERHEAD CATEGORY] {highest_overhead_category}: {expense_percentage}%")
+    file.write(f"[HIGHEST OVERHEAD CATEGORY] {highest_overhead_category}: {expense_percentage}%\n")
+    # write a divider
+    file.write("----------------------------------------------\n")
