@@ -17,3 +17,5 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         #get day and its respective net profit
         #and append the pro list
         profitLoss.append([row[0],row[4]])
+
+#-------------------------------------------------------------#

@@ -18,6 +18,7 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         #and append the overheads list
         overheads.append([row[0],row[1]])  
 
+#-------------------------------------------------------------#
 
 def overhead_function():
     highest_overhead_category = None
