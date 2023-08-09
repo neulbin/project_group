@@ -19,5 +19,29 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
         cashOnHand.append([row[0],row[1]])
 
 #-------------------------------------------------------------#
-# hi   
-# um
+def coh_function(cashOnHand):
+    previous_cash = None
+    highest_surplus = {'day': None, 'amount': 0}
+
+    output = ""
+
+    for day, cash in cashOnHand:
+        # convert cash value to integer
+        cash = int(cash)
+
+        # determines whether difference is a deficit or a surplus
+        if previous_cash is not None:
+            cash_diff = cash - previous_cash
+            if cash_diff < 0:
+                output += f"[CASH DEFICIT] Day: {day}, Amount: USD{abs(cash_diff)}\n"
+            else:
+                output += f"[CASH SURPLUS] Day: {day}, Amount: USD{cash_diff}\n"
+                if cash_diff > highest_surplus['amount']:
+                    highest_surplus['day'] = day
+                    highest_surplus['amount'] = cash_diff
+        previous_cash = cash
+
+    if highest_surplus['day'] is not None:
+        output += f"[HIGHEST CASH SURPLUS] Day: {highest_surplus['day']}, Amount: USD{highest_surplus['amount']}"
+
+    return output
