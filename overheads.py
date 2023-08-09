@@ -14,8 +14,8 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
     # append type of expense and its percentage into the overheads list
     for row in reader:
-        #get the type of expense and its percentage
-        #and append the overheads list
+        # get the type of expense and its percentage
+        # and append the overheads list
         overheads.append([row[0],row[1]])  
 
 #-------------------------------------------------------------#

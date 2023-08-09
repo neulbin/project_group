@@ -12,10 +12,10 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     # create an empty lists to store the day and the respective net profit
     profitLoss=[] 
 
-    # append the day and the respective net profit record into the salesRecords list
+    # append the day and the respective net profit into the profitLoss list
     for row in reader:
-        #get day and its respective net profit
-        #and append the pro list
+        # get day and its respective net profit
+        # and append the profitLoss list
         profitLoss.append([str(row[0]), str(row[4])])
 
 #-------------------------------------------------------------#
@@ -39,7 +39,7 @@ def profitLoss_function(profitLoss):
             # if the difference is below 0 (a negative number), it is a deficit
             if net_profit_diff < 0:
                 output += f"[NET PROFIT DEFICIT] Day: {day}, Amount: USD{abs(net_profit_diff)}\n"
-                
+
             # if the difference is above 0 (a psoitive number), it is a surplus
             else:
                 output += f"[NET PROFIT SURPLUS] Day: {day}, Amount: USD{net_profit_diff}\n"

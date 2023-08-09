@@ -14,8 +14,8 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
 
     # append the day and the respective amount of cash on hand into the cashOnHand list
     for row in reader:
-        #get the day and its amount of cash on hand
-        #and append the cashOnHand list
+        # get the day and its amount of cash on hand
+        # and append the cashOnHand list
         cashOnHand.append([str(row[0]), str(row[1])])
 
 #-------------------------------------------------------------#
