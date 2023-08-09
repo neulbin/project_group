@@ -35,4 +35,5 @@ def overhead_function():
             max_expense = expense_percentage
             highest_overhead_category = category
 
+        # return the highest overhead category and its percentage
         return highest_overhead_category, expense_percentage
