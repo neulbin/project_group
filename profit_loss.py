@@ -16,6 +16,37 @@ with fp.open(mode="r", encoding="UTF-8", newline="") as file:
     for row in reader:
         #get day and its respective net profit
         #and append the pro list
-        profitLoss.append([row[0],row[4]])
+        profitLoss.append([str(row[0]), str(row[4])])
 
 #-------------------------------------------------------------#
+def profitLoss_function(profitLoss):
+    previous_net_profit = None
+    highest_increment = {'day': None, 'amount': 0}
+
+    # create a new variable to store the output
+    output = ""
+
+    for day, net_profit in profitLoss:
+        # convert cash value to integer
+        net_profit = int(net_profit)
+
+        # determines whether difference is a deficit or a surplus
+        if previous_net_profit is not None:
+            net_profit_diff = net_profit - previous_net_profit
+
+            if net_profit_diff < 0:
+                output += f"[NET PROFIT DEFICIT] Day: {day}, Amount: USD{abs(net_profit_diff)}\n"
+            else:
+                output += f"[NET PROFIT SURPLUS] Day: {day}, Amount: USD{net_profit_diff}\n"
+
+                if net_profit_diff > highest_increment['amount']:
+                    # to find out day with the highest increment
+                    highest_increment['day'] = day
+                    highest_increment['amount'] = net_profit_diff
+
+        previous_net_profit = net_profit
+
+    if highest_increment['day'] is not None:
+        output += f"[HIGHEST NET PROFIT SURPLUS] Day: {highest_increment['day']}, Amount: USD{highest_increment['amount']}"
+
+    return output
